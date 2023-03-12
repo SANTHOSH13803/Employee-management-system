@@ -32,10 +32,10 @@ def edit(request,id):
         form =EmployeeForm(request.POST,instance = employeeObj) 
         if form.is_valid():
             instance = form.save(commit=False)
-            print(employeeObj.on_leave==False,'table')
-            print(request.POST.get('on_leave',''),'from form')
-            print(instance.on_leave==True and request.POST.get('on_leave','')==None ,'condition')
-            if(instance.on_leave==True and request.POST.get('on_leave','')==None ):
+            # print(employeeObj.on_leave==False,'table')
+            # print(request.POST.get('on_leave',''),'from form')
+            # print(instance.on_leave==True and request.POST.get('on_leave','')==None ,'condition')
+            if(instance.on_leave==True ):
                 instance.leave_count+=1
             instance.save()
             return redirect('employeelist')
