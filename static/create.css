@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.custom-nav {
+  background: linear-gradient(
+    90deg,
+    #ededff 0%,
+    rgba(243, 232, 243, 0.634722) 36.53%,
+    #fddfdf 100%
+  );
+}
+.company-logo {
+  display: flex;
+  gap: 3px;
+}
+.company-logo span:nth-child(1) {
+  background: #ff6464;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 6px;
+  font-size: 16px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-family: "Trebuchet MS";
+  font-style: italic;
+  font-weight: 700;
+}
+
+.company-logo span:last-child {
+  background: #01024e;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 6px;
+  font-family: "Trebuchet MS";
+  font-style: italic;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.main-content {
+  position: relative;
+  min-height: 100vh;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  /* padding: 10px; */
+}
+
+.bg-image {
+  background: url("https://images.unsplash.com/photo-1562097365-e24bb4c0479c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+  filter: contrast(40%) brightness(80%);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+.nav-item {
+  display: block;
+  text-align: center;
+}
+.nav-item a{
+  color: #555555;
+}
+
+.active-page{
+color: #cf2c20 !important;
+font-weight: 600;
+text-decoration: underline;
+}
+
+
+/* Create page */
+.form-box{
+  overflow: hidden;
+}
+.form-bg{
+  background-color: white !important;
+  z-index: 10;
+  /* max-height: 600px; */
+  /* overflow-y: scroll; */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  max-width: 600px;
+}
+.form-bg::-webkit-scrollbar{
+  /* display: none; */
+  width: 10px;
+  background-color: #55555555;
+  border-radius: 10px;
+}
+.form-bg::-webkit-scrollbar-thumb{
+  background-color: #5555;
+  border-radius: 10px;
+}
+.form-bg::-webkit-scrollbar-thumb:hover{
+  background-color: #757575;
+
+}
+
+.heading{
+  color: #01024E;
+  font-family: 'Mukta';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+}
+.submit-btns{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.submit-btns button{
+  cursor: pointer;
+}
+
+input[type='checkbox']{
+ width: 10px;
+ height: 10px;
+}
+.input-box label{
+  font-family: "Roboto";
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.input-box input{
+  background-color: #F9F6F6;
+  font-weight: 500;
+}
+.input-box select{
+  background-color: #F9F6F6;
+}
+.leaves{
+  font-weight: bold;
+  margin-top: 20px;
+}
+.active-box{
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.active-box input{
+  height: 20px;
+  width: 20px;
+}
+.active-box label{
+  margin-top: 5px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+@media screen and (min-width:768px) {
+  .active-page{
+    text-decoration: underline;
+  }
+  .form-bg::-webkit-scrollbar{
+    display: none;
+  }
+}
+
+
+/* Employee table */
+
+.employee-page{
+  z-index: 10;
+  background-color: white;
+  width: 100%;
+  border-radius: 10px;
+  max-width: 600px;
+}
+.employee-table{
+  width: 100%;
+  min-height: 600px;
+}
+
+.editandview-btns{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.custom-table-head{
+  background-color: #FFE0E0!important;
+}
+
+.emp-heading h1{
+  color: #01024E;
+  font-family: 'Mukta';
+  font-weight: 700;
+  font-size: 24px;
+}
+.emp-count{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #FFE0E0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Mukta";
+}
+.emp-heading{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+@media screen and (min-width:768px) {
+.employee-page{
+  max-width: 100%;
+  margin: 20px;
+}
+}
+@media screen and (max-width:768px) {
+  td,th{
+    min-width: 150px;
+  }
+}
+
+
+input[type='text']::placeholder{
+  color: #55555555;
+}
+
+
+
+/* Validatioons */
+
+small ul li{
+  list-style: none!important;
+  color: red!important;
+}
+.view-container{
+  z-index: 10;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+  margin: 20px;
+}
+.view-container small{
+  font-weight: 500;
+  font-size: 12px;
+  color: #555555;
+  text-decoration: underline;
+}
+.view-container h5,
+.view-container h1{
+  font-weight: 600;
+  font-size: 25px;
+}
+.view-container p{
+  font-weight: 600;
+}
+
+@media screen and (min-width:768px) {
+  .view-bg{
+    height: fit-content;
+  }
+  .view-container small{
+    font-size: 15px;
+  }
+  .view-container h5{
+    font-size: 30px;
+  }
+  .view-container h1{
+    font-size: 45px;
+  }
+}
+
+.br-1{
+  border-bottom: 3px solid rgb(119, 119, 255);
+  animation: border-animation 10s infinite;
+}
+
+@keyframes border-animation {
+  20%,60%{  
+    border-bottom: 3px solid rgb(200, 102, 32);
+  }
+  50%,100%{
+    border-bottom: 3px solid rgb(34, 177, 51);
+    
+  }
+  
+}
+

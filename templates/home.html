@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+<div class="form-bg w-100 p-3">
+    <div class="p-1">
+       <p>Total Employees</p>
+       <h2>{{empCount}}</h2>
+    </div>
+    <hr>
+
+    <div>
+        <h3>Active Employees</h3>
+        {% if activeCondition %}
+        <p>No Employee is active</p>
+        {% else %}
+        <ol class='p-3'>
+            {% for emp in activeEmpls  %}
+            <li>{{emp}}</li>
+            {% endfor %}
+        </ol>
+        {% endif %}
+      
+    </div>
+<hr>
+    <div>
+        <h3>Employees on leave</h3>
+        {% if onLeaveCondition %}
+        <p>No employee is on Leave</p>
+        {% else %}
+        <ol class='p-3'>
+            {% for emp in onleaveEmpls %}
+            <li>{{emp}}</li>
+            {% endfor %}
+        </ol>
+        {% endif %}
+    </div>
+</div>
+{% endblock body %}

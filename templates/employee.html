@@ -1,0 +1,75 @@
+{% extends 'base.html' %} 
+
+{% block title %} Employee {% endblock title %} 
+
+
+{% block body %}
+<div class="employee-page mb-4 mt-4">
+{% if NoEmpview  %}
+  <div class="emp-heading pt-2 pl-2">
+    <h1>Employees</h1>
+    <p class="emp-count">{{EmployeeData.count}}</p>
+  </div>
+  <div class="table-responsive p-2 employee-table">
+    <table class="table table-bordered">
+      <thead class="custom-table-head">
+        <tr>
+          <th scope="col">S.No</th>
+          <th scope="col">Name</th>
+          <th scope="col">DOB</th>
+          <th scope="col">Date of Joining</th>
+          <th scope="col">Designation</th>
+          <th scope="col">City</th>
+          <th scope="col">State</th>
+          <th scope="col">Country</th>
+          <th scope="col">Zip Code</th>
+          <th scope="col">No of Leaves</th>
+          <th scope="col">Status</th>
+          <th scope="col">Edit/view</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for employee in EmployeeData  %}
+            <tr>
+              <th scope="row">{{employee.empId}}</th>
+              <td>{{employee.name}}</th>
+              <td>{{employee.date_of_birth|date:"M d, Y"}}</td>
+              <td>{{employee.date_of_joining|date:"M d, Y"}}</td>
+              <td>{{employee.designation}}</td>
+              <td>{{employee.city}}</td>
+              <td>{{employee.state}}</td>
+              <td>{{employee.country}}</td>
+              <td>{{employee.zipcode}}</td>
+              <td>{{employee.leave_count}}</td>
+              <td>
+                 {% if employee.active_field %}
+                Active
+                {% else %}
+                In-active
+                {% endif %} 
+              </td>
+              <td class='editandview-btns'>
+                  <a href="{% url 'edit' employee.empId %}" type="button" class="btn btn-success w-100">Edit</a>
+                <a href="{% url 'employee_view' employee.empId %}"  type="button" class="btn btn-info w-100 view-btn">View</a>
+          
+              </td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  {% else %}
+  <div class='d-flex flex-column align-items-center justify-content-center p-5'>
+    <h5>No Employee added</h1>
+    <a href="{% url 'create' %}">
+      <button class='btn btn-success mt-2'>
+        Create
+      </button>
+    </a>
+  </div>
+  {% endif %}
+</div>
+
+
+{% endblock body %}

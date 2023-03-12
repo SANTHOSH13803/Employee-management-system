@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+ {% block title %} Create {% endblock title %} 
+ {% block body %}
+<div
+  class="container from-box pt-4 pb-4 d-flex align-items-center justify-content-center"
+>
+  <form
+    class="row form-bg p-sm-2 m-2 needs-validation"
+    method="post"
+    novalidate
+  >
+    {% csrf_token %}
+    <div class="col-12 mt-3 mb-2"><h1 class="heading">Create Employee</h1></div>
+    <!--INPUT STARTS HERE-->
+    {% comment %} {{form.as_table}} {% endcomment %}
+    <!--Name-->
+    <div class="col-12 col-md-6 mb-2">
+      <div class="input-box">
+        <label for="{{form.name.id_for_label}}">Name</label>
+        <br />
+        {{form.name}}
+        <div class="invalid-feedback">Enter valid name</div>
+      </div>
+    </div>
+
+    <!--Designation-->
+    <div class="col-12 col-md-6 mb-2">
+      <div class="input-box">
+        <label for="{{form.designation.id_for_label}}">Post</label>
+        <br />
+        {{form.designation}}
+        <div class="invalid-feedback">Choose valid post</div>
+      </div>
+    </div>
+
+    <!--DOJ-->
+    <div class="col-12 col-md-6 mb-2">
+      <div class="input-box">
+        <label for="{{form.date_of_joining.id_for_label}}"
+          >Date of Joining</label
+        >
+        <br />
+        {{form.date_of_joining}}
+        <div class="invalid-feedback">Choose valid date</div>
+      </div>
+    </div>
+
+    <!--Address-->
+    <div class="col-12 col-md-6 mb-2">
+      <div class="input-box">
+        <label for="{{form.address.id_for_label}}">Address</label>
+        <br />
+        {{form.address}}
+        <div class="invalid-feedback">Enter address</div>
+      </div>
+    </div>
+
+    <!--City-->
+    <div class="col-12 col-md-6 mb-2">
+      <div class="input-box">
+        <label for="{{form.city.id_for_label}}">City</label>
+        <br />
+        {{form.city}}
+        <div class="invalid-feedback">Enter city</div>
+      </div>
+    </div>
+
+    <!--Country-->
+    <div class="col-12 col-md-6 mb-2">
+      <div class="input-box">
+        <label for="{{form.country.id_for_label}}">Country</label>
+        <br />
+        {{form.country}}
+        <div class="invalid-feedback">Enter country</div>
+      </div>
+    </div>
+
+    <!--Zipcode-->
+    <div class="col-12 col-md-6 mb-2">
+      <div class="input-box">
+        <label for="{{form.zipcode.id_for_label}}">Zip Code</label>
+        <br />
+        {{form.zipcode}}
+        <div class="invalid-feedback">Please provide a valid zipcode</div>
+      </div>
+    </div>
+
+    <!--State-->
+    <div class="col-12 col-md-6 mb-2">
+      <div class="input-box">
+        <label for="{{form.state.id_for_label}}">State</label>
+        <br />
+        {{form.state}}
+        <div class="invalid-feedback">Enter valid state</div>
+      </div>
+    </div>
+
+    <!--DOB-->
+    <div class="col-12 col-md-6 mb-2">
+      <div class="input-box">
+        <label for="{{form.date_of_birth.id_for_label}}">Date of Birth</label>
+        <br />
+        {{form.date_of_birth}}
+        <div class="invalid-feedback">Enter valid Date of Birth</div>
+      </div>
+    </div>
+
+    <!--on Leave count-->
+    <div class="col-12 col-md-6 mb-2">
+      <div class="input-box form-group">
+        <label for="{{form.leave_count.id_for_label}}">No of leave days</label>
+        {{form.leave_count}}
+      </div>
+    </div>
+
+    <!--City-->
+    <div class="col-12 col-md-6">
+      <div class="input-box active-box form-group">
+        <label for="{{form.active_field.id_for_label}}">Active</label>
+        <br />
+        {{form.active_field}}
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="input-box active-box form-group">
+        <label for="{{form.on_leave.id_for_label}}">On Leave</label>
+        <br />
+        {{form.on_leave}}
+      </div>
+    </div>
+
+    <div class="submit-btns">
+      <div class="d-flex p-1">
+        <button type="reset" class="form-control btn btn-outline-secondary">
+          Cancel
+        </button>
+        <button type="submit" class="ml-4 form-control btn btn-primary">
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+{% endblock body %}
